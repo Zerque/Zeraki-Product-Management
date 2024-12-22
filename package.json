@@ -1,0 +1,17 @@
+{
+  "name": "express-test",
+  "version": "1.0.0",
+  "description": "Express test application",
+  "main": "app.js",
+  "scripts": {
+    "test": "test-express"
+  },
+  "author": "Shivere",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}
