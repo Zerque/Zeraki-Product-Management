@@ -82,6 +82,20 @@ app.post("/login", (req, res) => {
   });
 });
 
+// Fetch Users
+app.get("/users", (req, res) => {
+  db.all(`SELECT * FROM users`, [], (err, rows) => {
+    if (err) {
+      console.error("Error fetching users:", err.message);
+      res.status(500).json({ error: "Failed to fetch users." });
+    } else if (rows) {
+      res.json(rows);
+    } else {
+      res.status(401).json({ error: "Unauthorized." });
+    }
+  });
+});
+
 // Submit Feedback
 app.post("/feedback", (req, res) => {
   const { product, feature, description } = req.body;
